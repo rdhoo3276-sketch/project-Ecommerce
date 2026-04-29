@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>StepUp Store</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  </head>
+  <body>
+
+    <!-- HEADER -->
+    <header>
+      <div class="header-inner">
+        <div class="logo">
+          <span class="logo-icon">👟</span>
+          <span class="logo-text">StepUp</span>
+        </div>
+        <div class="search-box">
+          <i class="fas fa-search search-icon"></i>
+          <input type="text" id="searchInput" placeholder="Cari Produk...">
+        </div>
+        <button class="cart-btn" id="cartBtn">
+          <i class="fas fa-shopping-bag"></i>
+          <span>Keranjang</span>
+          <span class="cart-badge" id="cartCount">0</span>
+        </button>
+        <a href="wishlist.html" class="orders-link">
+          <i class="fas fa-heart"></i> Wishlist
+        </a>
+        <a href="orders.html" class="orders-link">
+          <i class="fas fa-receipt"> Pesanan
+          </i>
+        </a>
+      </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-inner">
+        <p class="hero-tag">New Collection 2026</p>
+        <h1>Find Your <span>Perfect Step</span></h1>
+        <p class="hero-sub">Koleksi sepatu terbaik untuk setiap gaya hidup kamu.</p>
+      </div>
+    </section>
+
+    <!-- FILTER -->
+    <section class="filter-section">
+      <div class="filter-inner">
+        <button class="filter-btn active" data-category="all">Semua</button>
+        <button class="filter-btn" data-category="sneakers">Sneakers</button>
+        <button class="filter-btn" data-category="casual">Casual</button>
+        <button class="filter-btn" data-category="formal">Formal</button>
+        <button class="filter-btn" data-category="sport">Sport</button>
+      </div>
+    </section>
+
+    <!-- PRODUK -->
+    <main>
+      <div class="section-title">
+        <h2>Produk Kami</h2>
+        <div style="display:flex; align-items:center; gap:12px;">
+          <p id="productCount"></p>
+          <select id="sortSelect">
+            <option value="default">Urutkan</option>
+            <option value="termurah">Harga Termurah</option>
+            <option value="termahal">Harga Termahal</option>
+            <option value="nama">A-Z</option>
+          </select>
+        </div>
+      </div>
+      <div class="product-grid" id="productGrid"></div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+      <p>© 2026 StepUp Store. All rights reserved.</p>
+    </footer>
+
+    <!-- CART -->
+    <div class="cart-overlay" id="cartOverlay"></div>
+    <aside class="cart-sidebar" id="cartSidebar">
+      <div class="cart-header">
+        <h2><i class="fas fa-shopping-bag"></i> Keranjang</h2>
+        <button class="close-cart" id="closeCart">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <div class="cart-items" id="cartItems"></div>
+      <div class="cart-footer">
+        <div class="cart-total-row">
+          <span>Total</span>
+          <strong id="cartTotal">Rp 0</strong>
+        </div>
+        <button class="checkout-btn" id="checkoutBtn">
+          <i class="fas fa-credit-card"></i> Checkout
+        </button>
+      </div>
+    </aside>
+
+    <!-- MODAL -->
+    <div class="modal-overlay" id="modalOverlay"></div>
+    <div class="modal" id="productModal">
+      <button class="modal-close" id="modalClose">
+        <i class="fas fa-times"></i>
+      </button>
+      <div class="modal-img-wrap">
+        <img id="modalImg" src="" alt="" />
+      </div>
+      <div class="modal-info">
+        <span class="modal-badge" id="modalCategory"></span>
+        <h2 id="modalName"></h2>
+        <p class="modal-price" id="modalPrice"></p>
+        <div class="modal-actions">
+          <button class="add-to-cart" id="modalAddCart">
+            <i class="fas fa-shopping-bag"></i> Tambah ke Keranjang
+          </button>
+          <button class="buy-now" id="modalBuyNow">
+            <i class="fas fa-bolt"></i> Beli Sekarang
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- TOAST -->
+    <div class="toast" id="toast"></div>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>
